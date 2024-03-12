@@ -1,0 +1,42 @@
+from time import sleep
+
+def greeting():
+    arrey = ['Привет!','Я - маленькое консольное приложение!ヽ(・∀・)ﾉ','Давай пограем?(╯✧▽✧)╯','Правда я знаю пока только одну игру...','Пиши числа(лучше больше 9, так интересней).','А когда надоест - введи 0.','Я просмотрю все твои числа и выберу число с сааамой большой суммой цифр!','И все покажу (ﾉ◕ヮ◕)ﾉ*:･ﾟ','Пиши числа по одному и после каждого жми *Enter*']
+    for i in arrey:
+        print(i)
+        sleep(2)
+        
+def main_function():
+    array = []
+    while True :
+        test_text = input('Введи число: ' )
+        if test_text == '0':
+            break
+        array+=[test_text]
+    print('Вот все числа которые ты ввел, из них получился массив: '+str(array) + 'o(≧▽≦)o')
+    sleep(2)
+    list = []
+    for arr in array:
+        list+= [sum_int(arr)]
+    n = list.index(max(list))
+    print('А вот и число, которое я искала: ' + str(array[n]))
+    sleep(2)
+    print('А сумма цифр в нем равна: ' + str(max(list)) + ' (((o(*°▽°*)o)))')
+    sleep(2)
+        
+def adieu():
+    massiv = ['Вот как я умею!','Спасибо за внимание!','До свидания!( ´ ∀ `)ノ～ ♡']
+    for i in massiv:
+        print(i)
+        sleep(3)
+        
+def sum_int(num):
+    sum = 0
+    for i in num:
+        sum+=int(i)
+    return sum
+
+greeting()
+main_function()
+adieu()
+input('Нажми *Enter* чтобы завершить программу.')
