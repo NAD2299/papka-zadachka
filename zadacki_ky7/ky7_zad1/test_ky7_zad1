@@ -1,0 +1,15 @@
+import unittest
+from ky7_zad2 import remove_url_anchor
+
+class TestRemuveUrlAnchor(unittest.TestCase):
+
+    def test_good_str(self):
+        self.assertEqual(remove_url_anchor('asdfg.876_re.com#5677'),'asdfg.876_re.com', 'VSE PLOHO V 1')
+        self.assertEqual(remove_url_anchor('asfr.76,hhyff.net#87re'),'asfr.76,hhyff.net', 'VSE PLOHO V 2')
+
+    def test_notgood_str(self):
+        self.assertEqual(remove_url_anchor('fdrety65.com'),'fdrety65.com', 'VSE PLOHO V 3')
+        self.assertEqual(remove_url_anchor('Aseert_sun.net??'),'Aseert_sun.net??', 'VSE PLOHO V 4')
+
+    def test_anither_type(self):
+        self.assertRaises(TypeError, remove_url_anchor, 45, ['asw',76], [54,['.com']], False, [[45,78], ['sery','bery']])
