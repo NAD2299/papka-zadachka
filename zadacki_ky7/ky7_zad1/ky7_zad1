@@ -1,0 +1,7 @@
+def remove_url_anchor(url):
+    if type(url) not in [str]:
+        raise TypeError
+    if '#' in url:
+        return url[:url.index('#')]
+    else:
+        return url
