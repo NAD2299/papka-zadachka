@@ -1,0 +1,6 @@
+def between(a,b):
+    x = []
+    for i in range(a,b+1):
+        x+=[i]
+    return x
+print(between(2,7))
